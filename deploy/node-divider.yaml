@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: divideapp
+  labels:
+    app: divide
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: divide
+  template:
+    metadata:
+      labels:
+        app: divide
+      annotations:
+        dapr.io/enabled: "true"
+        dapr.io/app-id: "divideapp"
+        dapr.io/app-port: "4000"
+        dapr.io/config: "appconfig"
+    spec:
+      containers:
+      - name: divide
+        image: ghcr.io/dapr/samples/distributed-calculator-node:latest
+        env:
+        - name: APP_PORT
+          value: "4000"
+        ports:
+        - containerPort: 4000
+        imagePullPolicy: Always

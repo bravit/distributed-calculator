@@ -1,0 +1,24 @@
+{
+  "configurations": [
+    {
+      "type": "command",
+      "name": "Build CSharp Subtracter",
+      "program": "dotnet",
+      "environment": {
+        "ASPNETCORE_URLS": "http://localhost:7001"
+      },
+      "args": [
+        "build"
+      ]
+    },
+    {
+      "type": "command",
+      "name": "CSharp Subtracter",
+      "program": "dapr",
+      "environment": {
+        "ASPNETCORE_URLS": "http://localhost:7001"
+      },
+      "args": ["run", "--app-id", "subtractapp", "--app-port", "7001", "--dapr-http-port", "3504", "dotnet", "./bin/Debug/netcoreapp3.1/Subtract.dll"],
+    },
+  ]
+}

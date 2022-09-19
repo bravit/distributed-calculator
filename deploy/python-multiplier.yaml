@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: multiplyapp
+  labels:
+    app: multiply
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: multiply
+  template:
+    metadata:
+      labels:
+        app: multiply
+      annotations:
+        dapr.io/enabled: "true"
+        dapr.io/app-id: "multiplyapp"
+        dapr.io/app-port: "5001"
+        dapr.io/config: "appconfig"
+    spec:
+      containers:
+      - name: multiply
+        image: ghcr.io/dapr/samples/distributed-calculator-slow-python:latest
+        env:
+        - name: "APP_PORT"
+          value: "5001"
+        ports:
+        - containerPort: 5001
+        imagePullPolicy: Always

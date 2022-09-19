@@ -1,0 +1,10 @@
+{
+  "configurations": [
+    {
+      "type": "command",
+      "name": "Node Divider",
+      "program": "dapr",
+      "args": ["run", "--app-id", "divideapp", "--app-port", "4000", "--dapr-http-port", "3502", "node", "app.js"],
+    },
+  ]
+}
