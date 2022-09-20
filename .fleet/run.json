@@ -1,0 +1,64 @@
+{
+  "configurations": [
+    {
+      "type": "command",
+      "name": "Build C# Subtracter",
+      "program": "dotnet",
+      "workingDir": "csharp/",
+      "environment": {
+        "ASPNETCORE_URLS": "http://localhost:7001"
+      },
+      "args": [
+        "build"
+      ]
+    },
+    {
+      "type": "command",
+      "name": "C# Subtracter",
+      "program": "dapr",
+      "workingDir": "csharp/",
+      "environment": {
+        "ASPNETCORE_URLS": "http://localhost:7001"
+      },
+      "args": ["run", "--app-id", "subtractapp", "--app-port", "7001", "--dapr-http-port", "3504", "dotnet", "./bin/Debug/netcoreapp3.1/Subtract.dll"],
+    },
+    {
+      "type": "command",
+      "name": "Go Adder",
+      "program": "dapr",
+      "workingDir": "go/",
+      "args": ["run", "--app-id", "addapp", "--app-port", "6000", "--dapr-http-port", "3503", "go", "run", "app.go"],
+    },
+    {
+      "type": "command",
+      "name": "Node Divider",
+      "program": "dapr",
+      "workingDir": "node/",
+      "args": ["run", "--app-id", "divideapp", "--app-port", "4000", "--dapr-http-port", "3502", "node", "app.js"],
+    },
+    {
+      "type": "command",
+      "name": "Python Multiplier",
+      "program": "dapr",
+      "workingDir": "./python/",
+      "environment": {
+        "FLASK_RUN_PORT": "5001"
+      },
+      "args": ["run", "--app-id", "multiplyapp", "--app-port", "5001", "--dapr-http-port", "3501", "flask", "run"],
+    },
+    {
+      "type": "command",
+      "name": "Frontend",
+      "program": "dapr",
+      "workingDir": "react-calculator/",
+      "args": ["run", "--app-id", "frontendapp", "--app-port", "8080", "--dapr-http-port", "3507", "node", "server.js"],
+    },
+    {
+      "type": "command",
+      "name": "Rust Multiplier",
+      "program": "dapr",
+      "workingDir": "rust/",
+      "args": ["run", "--app-id", "multiplyapp", "--app-port", "5001", "--dapr-http-port", "3501", "cargo", "run"],
+    },
+  ]
+}
