@@ -36,7 +36,14 @@
       "workingDir": "node/",
       "args": ["run", "--app-id", "divideapp", "--app-port", "4000", "--dapr-http-port", "3502", "node", "app.js"],
     },
-    {
+      {
+          "type": "command",
+          "name": "Kotlin Divider",
+          "program": "dapr",
+          "workingDir": "kotlin/",
+          "args": ["run", "--app-id", "divideapp", "--app-port", "4000", "--dapr-http-port", "3502", "gradle", "run"],
+      },
+      {
       "type": "command",
       "name": "Python Multiplier",
       "program": "dapr",
