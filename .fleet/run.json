@@ -14,7 +14,7 @@
     },
     {
       "type": "command",
-      "name": "C# Subtracter",
+      "name": "Subtracter (C#)",
       "program": "dapr",
       "workingDir": "csharp/",
       "environment": {
@@ -24,28 +24,35 @@
     },
     {
       "type": "command",
-      "name": "Go Adder",
+      "name": "Adder (Go)",
       "program": "dapr",
       "workingDir": "go/",
       "args": ["run", "--app-id", "addapp", "--app-port", "6000", "--dapr-http-port", "3503", "go", "run", "app.go"],
     },
-    {
+      {
+          "type": "command",
+          "name": "Adder (Java)",
+          "program": "dapr",
+          "workingDir": "java/",
+          "args": ["run", "--app-id", "addapp", "--app-port", "6000", "--dapr-http-port", "3503", "gradle", "run"],
+      },
+      {
       "type": "command",
-      "name": "Node Divider",
+      "name": "Divider (Node JS)",
       "program": "dapr",
       "workingDir": "node/",
       "args": ["run", "--app-id", "divideapp", "--app-port", "4000", "--dapr-http-port", "3502", "node", "app.js"],
     },
       {
           "type": "command",
-          "name": "Kotlin Divider",
+          "name": "Divider (Kotlin)",
           "program": "dapr",
           "workingDir": "kotlin/",
           "args": ["run", "--app-id", "divideapp", "--app-port", "4000", "--dapr-http-port", "3502", "gradle", "run"],
       },
       {
       "type": "command",
-      "name": "Python Multiplier",
+      "name": "Multiplier (Python)",
       "program": "dapr",
       "workingDir": "./python/",
       "environment": {
@@ -62,7 +69,7 @@
     },
     {
       "type": "command",
-      "name": "Rust Multiplier",
+      "name": "Multiplier (Rust)",
       "program": "dapr",
       "workingDir": "rust/",
       "args": ["run", "--app-id", "multiplyapp", "--app-port", "5001", "--dapr-http-port", "3501", "cargo", "run"],
