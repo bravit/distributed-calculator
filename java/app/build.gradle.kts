@@ -23,7 +23,7 @@ dependencies {
     // This dependency is used by the application.
     implementation("com.google.guava:guava:30.1.1-jre")
     implementation("com.sparkjava:spark-core:2.9.4")
-    implementation("com.google.code.gson:gson:2.9.1")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.13.4")
 }
 
 application {
