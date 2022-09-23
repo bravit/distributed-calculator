@@ -31,10 +31,16 @@
     },
       {
           "type": "command",
+          "name": "Print Env",
+          "program": "printenv",
+          "args": [],
+      },
+      {
+          "type": "command",
           "name": "Adder (Java)",
           "program": "dapr",
           "workingDir": "java/",
-          "args": ["run", "--app-id", "addapp", "--app-port", "6000", "--dapr-http-port", "3503", "gradle", "run"],
+          "args": ["run", "--app-id", "addapp", "--app-port", "6000", "--dapr-http-port", "3503", "./gradlew", "run"],
       },
       {
       "type": "command",
@@ -48,7 +54,7 @@
           "name": "Divider (Kotlin)",
           "program": "dapr",
           "workingDir": "kotlin/",
-          "args": ["run", "--app-id", "divideapp", "--app-port", "4000", "--dapr-http-port", "3502", "gradle", "run"],
+          "args": ["run", "--app-id", "divideapp", "--app-port", "4000", "--dapr-http-port", "3502", "./gradlew", "run"],
       },
       {
       "type": "command",
