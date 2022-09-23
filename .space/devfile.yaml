@@ -1,12 +1,12 @@
 schemaVersion: 2.2.0
 metadata:
     name: 'IntelliJ Conf Fleet Demo config'
-    attributes:
-        space:
-            instanceType: regular
-            editor:
-                type: Fleet
-    components:
-    - name: dev-container
-      container:
-          image: registry.jetbrains.team/p/intellij-conf-fleet-demo/containers/dev-container:latest
+attributes:
+    space:
+        instanceType: regular
+        editor:
+            type: Fleet
+components:
+- name: dev-container
+  container:
+      image: registry.jetbrains.team/p/intellij-conf-fleet-demo/containers/dev-container:latest
