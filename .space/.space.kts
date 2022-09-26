@@ -1,6 +1,6 @@
-job("Build Fleet indexes") {
+job("Warm up the Dev Environment") {
     warmup(ide = Ide.Fleet) {
         devfile = ".space/devfile.yaml"
-        scriptLocation = ""
+        scriptLocation = "./dev-env-warmup.sh"
     }
 }
