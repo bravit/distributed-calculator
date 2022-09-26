@@ -24,6 +24,7 @@ dependencies {
     implementation("com.google.guava:guava:30.1.1-jre")
     implementation("com.sparkjava:spark-core:2.9.4")
     implementation("com.fasterxml.jackson.core:jackson-databind:2.13.4")
+    implementation("org.slf4j:slf4j-nop:1.7.21")
 }
 
 application {

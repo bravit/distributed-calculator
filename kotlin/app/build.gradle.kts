@@ -39,6 +39,7 @@ dependencies {
     implementation("io.ktor:ktor-server-netty:2.1.1")
     implementation("io.ktor:ktor-serialization-kotlinx-json:2.1.1")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.0")
+    implementation("org.slf4j:slf4j-nop:1.7.21")
 }
 
 application {
