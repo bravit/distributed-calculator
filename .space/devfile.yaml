@@ -6,6 +6,7 @@ attributes:
         instanceType: regular
         editor:
             type: Fleet
+            version: '1.9.167'
 components:
 - name: dev-container
   container:
