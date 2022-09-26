@@ -1,7 +1,5 @@
 #!/bin/sh
-cd python
-pip3 install wheel python-dotenv flask_cors flask
-cd ../go
+cd go
 go build .
 cd ../csharp
 export ASPNETCORE_URLS="http://localhost:7001"
