@@ -10,6 +10,6 @@ class AdditionHelper implements spark.Route {
         ObjectMapper mapper = new ObjectMapper();
         Operands ops = mapper.readValue(request.body(), Operands.class);
         System.out.printf("Calculating %2.1f + %2.1f%n", ops.operandOne, ops.operandTwo);
-        return Float.toString(ops.operandOne + ops.operandTwo);
+        return Float.toString(ops.operandOne - ops.operandTwo);
     }
 }
