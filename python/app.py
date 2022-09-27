@@ -18,7 +18,7 @@ import math
 import sys
 import os
 
-appPort = os.getenv("APP_PORT","5001")
+appPort = os.getenv("APP_PORT", "5001")
 
 app = flask.Flask(__name__)
 CORS(app)
@@ -30,4 +30,5 @@ def multiply():
     print(f"Calculating {operand_one} * {operand_two}", flush=True)
     return jsonify(math.ceil(operand_one * operand_two * 100000)/100000)
 
-app.run(host="0.0.0.0",port=appPort)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=appPort)
