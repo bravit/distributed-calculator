@@ -85,5 +85,10 @@
           "name": "Verify Services",
           "program": "./verify-services.sh",
       },
+      {
+          "type": "command",
+          "name": "Stop Services",
+          "program": "./stop-services.sh",
+      },
   ]
 }
