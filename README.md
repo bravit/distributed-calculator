@@ -16,16 +16,15 @@ The original distributed-calculator project shows method invocation and state pe
 - **Subtraction** (port 7001, `/subtract`):
     - [.NET Core](https://docs.microsoft.com/en-us/dotnet/core/) application
 
-Every backend application listens the port that corresponds to the operation it powers and answers one kind of POST requests with the following JSON in its body:
+Every backend application listens the port that corresponds to the operation it powers and answers one kind of POST requests with the JSON-encoded body like the following:
+    ```json
+    {
+        "operandOne":"52",
+        "operandTwo":"34"
+    }
+    ```
 
-```json
-{
-    "operandOne":"52",
-    "operandTwo":"34"
-}
-```
-
-The result is one number. There should be one service per operation at the most running at any time.
+The result is a single number. There should be one service per operation at the most running at any time.
 
 The front-end application consists of a server and a client written in [React](https://reactjs.org/). 
 Kudos to [ahfarmer](https://github.com/ahfarmer) for [React calculator](https://github.com/ahfarmer/calculator).
@@ -52,14 +51,14 @@ The following architecture diagram illustrates the components that make up this 
 
 3. There are several Run Configurations (**Run/Run & Debug...**) to run frontend and backend applications along the dapr sidecar instances:
 
-- Frontend
-- Adder (Go)
-- Adder (Java)
-- Subtracter (C#)
-- Multiplier (Python)
-- Multiplier (Rust)
-- Divider (Kotlin)
-- Divider (Node JS)
+    - Frontend
+    - Adder (Go)
+    - Adder (Java)
+    - Subtracter (C#)
+    - Multiplier (Python)
+    - Multiplier (Rust)
+    - Divider (Kotlin)
+    - Divider (Node JS)
 
 4. Open a browser window and go to http://localhost:8080/. From here, you can enter the different operations.
 
@@ -69,7 +68,7 @@ The following architecture diagram illustrates the components that make up this 
 
 6. **Optional:** Validate Services
 
-- To make sure all the backend applications are working, you can run the **Validate Services** run configuration which will test all the operations and report if something is missing. This configuration executes the `./validate-services` script. If everything works correctly you should get the following output:
+To make sure all the backend applications are working, you can run the **Validate Services** run configuration which will test all the operations and report if something is missing. This configuration executes the `./validate-services` script. If everything works correctly you should get the following output:
     ```bash
     ADD             ✅
     SUBTRACT        ✅
@@ -77,9 +76,9 @@ The following architecture diagram illustrates the components that make up this 
     DIVIDE          ✅
     ```
 
-7. **Optional:** Check persistent state
+7. **Optional:** Check persistent state (powered by redis)
 
-- To check persistent state (powered by redis), you can run the following `curl` request:
+- To check persistent state, you can run the following `curl` request:
     ```bash
     curl -s http://localhost:8080/state
     ```
