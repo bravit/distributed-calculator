@@ -47,7 +47,7 @@ The following architecture diagram illustrates the components that make up this 
 
 1. Once you have [Dapr CLI](https://github.com/dapr/cli) installed you should initialize it by running `dapr init`. This starts the Dapr services including Redis and Zipkin in Docker containers.
 
-2. The content of the `./dev-env-warmup.sh` script can give you an idea of how to install project dependencies and build backend and frontend applications.
+2. The content of the `./deps.sh` script can give you an idea of how to install project dependencies.
 
 3. There are several Run Configurations (**Run/Run & Debug...**) to run frontend and backend applications along the dapr sidecar instances:
 
@@ -69,6 +69,7 @@ The following architecture diagram illustrates the components that make up this 
 6. **Optional:** Validate Services
 
 To make sure all the backend applications are working, you can run the **Validate Services** run configuration which will test all the operations and report if something is missing. This configuration executes the `./validate-services` script. If everything works correctly you should get the following output:
+
     ```bash
     ADD             ✅
     SUBTRACT        ✅
