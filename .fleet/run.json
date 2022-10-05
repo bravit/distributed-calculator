@@ -82,8 +82,8 @@
     },
       {
           "type": "command",
-          "name": "Verify Services",
-          "program": "./verify-services.sh",
+          "name": "Validate Services",
+          "program": "./validate-services.sh",
       },
       {
           "type": "command",
