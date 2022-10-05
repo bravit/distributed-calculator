@@ -70,7 +70,7 @@ The following architecture diagram illustrates the components that make up this 
 
 To make sure all the backend applications are working, you can run the **Validate Services** run configuration which will test all the operations and report if something is missing. This configuration executes the `./validate-services` script. If everything works correctly you should get the following output:
 
-    ```bash
+    ```
     ADD             ✅
     SUBTRACT        ✅
     MULTIPLY        ✅
@@ -106,11 +106,6 @@ To make sure all the backend applications are working, you can run the **Validat
 8. Cleanup
 
 - Cleanup microservices: **Stop Services** run configuration (executes `./stop-services.sh`).
-
-- Uninstall node modules by navigating to the node directory and run:
-  ```
-  npm uninstall
-  ```
 - Uninstall Dapr and remove its Docker services:
   ```bash
   dapr uninstall --all
