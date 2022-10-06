@@ -22,6 +22,13 @@
       },
       "args": ["run", "--app-id", "subtractapp", "--app-port", "7001", "--dapr-http-port", "3504", "dotnet", "./bin/Debug/netcoreapp3.1/Subtract.dll"],
     },
+      {
+          "type": "command",
+          "name": "Subtracter (PHP)",
+          "program": "dapr",
+          "workingDir": "php/",
+          "args": ["run", "--app-id", "subtractapp", "--app-port", "7001", "--dapr-http-port", "3504", "--", "symfony", "serve", "--no-tls", "--port", "7001"],
+      },
     {
       "type": "command",
       "name": "Adder (Go)",
