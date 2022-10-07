@@ -27,7 +27,7 @@ Every backend application listens the port that corresponds to the operation it 
 
 The result is a single number. There should be one service per operation at the most running at any time.
 
-The front-end application consists of a server and a client written in [React](https://reactjs.org/). 
+The front-end application consists of a server and a client written in [React](https://reactjs.org/).
 Kudos to [ahfarmer](https://github.com/ahfarmer) for [React calculator](https://github.com/ahfarmer/calculator).
 
 The following architecture diagram illustrates the components that make up this project:
@@ -35,6 +35,8 @@ The following architecture diagram illustrates the components that make up this 
 ![Architecture Diagram](./img/Architecture_Diagram.png)
 
 ## Prerequisites for running the project
+
+**All the following prerequisites will be available when opening this project in IDE using Space Dev Environments and the prepared warm-up snapshot.**
 
 1. Install [Dapr CLI](https://github.com/dapr/cli)
 2. Install [.Net Core SDK 3.1](https://dotnet.microsoft.com/download)
@@ -44,12 +46,25 @@ The following architecture diagram illustrates the components that make up this 
 6. Install [Node](https://nodejs.org/en/download/)
 7. Install [Rust](https://rustup.rs/)
 8. Install [PHP](https://www.php.net/manual/en/install.php) and [composer](https://getcomposer.org/download/)
+9. Install [Docker](https://www.docker.com/)
+10. The content of the `./deps.sh` script can give you an idea of how to install project dependencies:
 
-## Running the project locally
+    ```bash
+    #!/bin/sh
+    cd python
+    pipenv install
+    cd ../node
+    npm install
+    cd ../php
+    composer update
+    cd ../react-calculator
+    npm install
+    npm run buildclient
+    ```
 
-1. Once you have [Dapr CLI](https://github.com/dapr/cli) installed you should initialize it by running `dapr init`. This starts the Dapr services including Redis and Zipkin in Docker containers.
+## Running the project
 
-2. The content of the `./deps.sh` script can give you an idea of how to install project dependencies.
+2. Initialize Dapr runtime it by running `dapr init`. This installs the required runtime binaries and launches the Dapr services including Redis and Zipkin in Docker containers.
 
 3. There are several Run Configurations (**Run/Run & Debug...**) to run frontend and backend applications along the dapr sidecar instances:
 
@@ -57,12 +72,13 @@ The following architecture diagram illustrates the components that make up this 
     - Adder (Go)
     - Adder (Java)
     - Subtracter (C#)
+    - Subtracter (PHP)
     - Multiplier (Python)
     - Multiplier (Rust)
     - Divider (Kotlin)
     - Divider (Node JS)
 
-4. Open a browser window and go to http://localhost:8080/. From here, you can enter the different operations.
+4. Open a browser window and go to http://localhost:8080/. From here, you can enter the different operations. If you run the project from the Space Dev environment, you will also need to **Forward Port** 8080 to some local port (via **Go to/Actions...** menu).
 
     ![Calculator Screenshot](./img/calculator-screenshot.JPG)
 

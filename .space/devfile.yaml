@@ -1,6 +1,6 @@
 schemaVersion: 2.2.0
 metadata:
-    name: 'IntelliJ Conf Fleet Demo config'
+    name: 'Polyglot Fleet Demo Project (distributed-calculator) config'
 attributes:
     space:
         instanceType: regular
