@@ -6,8 +6,8 @@ attributes:
         instanceType: regular
         editor:
             type: Fleet
-            version: '1.9.212'
-            updateChannel: 'EAP Candidate'
+            version: '1.9.213'
+            updateChannel: 'EAP'
 components:
 - name: dev-container
   container:
