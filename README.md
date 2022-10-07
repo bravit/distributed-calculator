@@ -15,6 +15,7 @@ The original distributed-calculator project shows method invocation and state pe
     - Kotlin [Ktor](https://ktor.io/) application
 - **Subtraction** (port 7001, `/subtract`):
     - [.NET Core](https://docs.microsoft.com/en-us/dotnet/core/) application
+    - PHP [Symfony](https://symfony.com/) application
 
 Every backend application listens the port that corresponds to the operation it powers and answers one kind of POST requests with the JSON-encoded body like the following:
     ```json
@@ -42,6 +43,7 @@ The following architecture diagram illustrates the components that make up this 
 5. Install [Npm](https://www.npmjs.com/get-npm)
 6. Install [Node](https://nodejs.org/en/download/)
 7. Install [Rust](https://rustup.rs/)
+8. Install [PHP](https://www.php.net/manual/en/install.php) and [composer](https://getcomposer.org/download/)
 
 ## Running the project locally
 

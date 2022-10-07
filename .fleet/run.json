@@ -27,7 +27,7 @@
           "name": "Subtracter (PHP)",
           "program": "dapr",
           "workingDir": "php/",
-          "args": ["run", "--app-id", "subtractapp", "--app-port", "7001", "--dapr-http-port", "3504", "--", "symfony", "serve", "--no-tls", "--port", "7001"],
+          "args": ["run", "--app-id", "subtractapp", "--app-port", "7001", "--dapr-http-port", "3504", "--", "php", "-S", "localhost:7001", "-t", "public"],
       },
     {
       "type": "command",
@@ -55,7 +55,7 @@
       "program": "dapr",
       "workingDir": "node/",
       "args": ["run", "--app-id", "divideapp", "--app-port", "4000", "--dapr-http-port", "3502", "node", "app.js"],
-    },
+      },
       {
           "type": "command",
           "name": "Divider (Kotlin)",
