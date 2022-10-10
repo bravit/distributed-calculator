@@ -3,7 +3,7 @@ metadata:
     name: 'Polyglot Fleet Demo Project (distributed-calculator) config'
 attributes:
     space:
-        instanceType: regular
+        instanceType: large
         editor:
             type: Fleet
             version: '1.9.213'
