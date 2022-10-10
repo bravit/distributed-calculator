@@ -64,7 +64,7 @@ The following architecture diagram illustrates the components that make up this 
 
 ## Running the project
 
-2. Initialize Dapr runtime it by running `dapr init`. This installs the required runtime binaries and launches the Dapr services including Redis and Zipkin in Docker containers.
+2. Initialize the Dapr runtime by running `dapr init`. This installs the required runtime binaries and launches the Dapr services including Redis and Zipkin in Docker containers.
 
 3. There are several Run Configurations (**Run/Run & Debug...**) to run frontend and backend applications along the dapr sidecar instances:
 
@@ -88,12 +88,10 @@ The following architecture diagram illustrates the components that make up this 
 
 To make sure all the backend applications are working, you can run the **Validate Services** run configuration which will test all the operations and report if something is missing. This configuration executes the `./validate-services` script. If everything works correctly you should get the following output:
 
-    ```
     ADD             ✅
     SUBTRACT        ✅
     MULTIPLY        ✅
     DIVIDE          ✅
-    ```
 
 7. **Optional:** Check persistent state (powered by redis)
 
