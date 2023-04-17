@@ -20,6 +20,12 @@ import os
 
 appPort = os.getenv("APP_PORT", "5001")
 
+
+@staticmethod
+def foo():
+    pass
+
+
 app = flask.Flask(__name__)
 CORS(app)
 
