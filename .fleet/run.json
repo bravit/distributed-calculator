@@ -20,7 +20,7 @@
       "environment": {
         "ASPNETCORE_URLS": "http://localhost:7001"
       },
-      "args": ["run", "--app-id", "subtractapp", "--app-port", "7001", "--dapr-http-port", "3504", "dotnet", "./bin/Debug/netcoreapp3.1/Subtract.dll"],
+      "args": ["run", "--app-id", "subtractapp", "--app-port", "7001", "--dapr-http-port", "3504", "dotnet", "./bin/Debug/net7.0/Subtract.dll"],
     },
       {
           "type": "command",
