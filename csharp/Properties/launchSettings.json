@@ -17,11 +17,11 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Subtract": {
+    "CSharpCalculator": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "api/subtract",
-      "applicationUrl": "https://localhost:7001;http://localhost:7000",
+      "applicationUrl": "http://localhost:7001;http://localhost:7000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

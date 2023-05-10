@@ -13,21 +13,19 @@
 
 using System;
 using Microsoft.AspNetCore.Mvc;
-using Subtract.Models;
+using CSharpCalculator.Models;
 
-namespace Subtract.Controllers
+namespace CSharpCalculator.Controllers;
+
+[Route("[controller]")]
+[ApiController]
+public class CSharpCalculatorController : ControllerBase
 {
-    [Route("[controller]")]
-    [ApiController]
-    public class SubtractController : ControllerBase
+    [HttpPost]
+    [Route("/subtract")]
+    public decimal Subtract(Operands operands)
     {
-
-        //POST: /subtract
-        [HttpPost]
-        public decimal Subtract(Operands operands)
-        {
-            Console.WriteLine($"Subtracting {operands.OperandTwo} from {operands.OperandOne}");
-            return Decimal.Parse(operands.OperandOne) - Decimal.Parse(operands.OperandTwo);
-        }
+        Console.WriteLine($"Subtracting {operands.OperandTwo} from {operands.OperandOne}");
+        return Decimal.Parse(operands.OperandOne) - Decimal.Parse(operands.OperandTwo);
     }
 }

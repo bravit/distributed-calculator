@@ -2,7 +2,7 @@
   "configurations": [
     {
       "type": "command",
-      "name": "Build C# Subtracter",
+      "name": "Build C# Calculator",
       "program": "dotnet",
       "workingDir": "csharp/",
       "environment": {
@@ -14,13 +14,13 @@
     },
     {
       "type": "command",
-      "name": "Subtracter (C#)",
+      "name": "C# Calculator",
       "program": "dapr",
       "workingDir": "csharp/",
       "environment": {
         "ASPNETCORE_URLS": "http://localhost:7001"
       },
-      "args": ["run", "--app-id", "subtractapp", "--app-port", "7001", "--dapr-http-port", "3504", "dotnet", "./bin/Debug/net7.0/Subtract.dll"],
+      "args": ["run", "--app-id", "subtractapp", "--app-port", "7001", "--dapr-http-port", "3504", "dotnet", "run"],
     },
       {
           "type": "command",

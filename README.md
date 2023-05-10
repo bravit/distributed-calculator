@@ -39,7 +39,7 @@ The following architecture diagram illustrates the components that make up this 
 **All the following prerequisites will be available when opening this project in IDE using Space Dev Environments and the prepared warm-up snapshot.**
 
 1. Install [Dapr CLI](https://github.com/dapr/cli)
-2. Install [.Net Core SDK 3.1](https://dotnet.microsoft.com/download)
+2. Install [.NET SDK 7.0](https://dotnet.microsoft.com/download)
 3. Install [Go](https://golang.org/doc/install)
 4. Install [Python3](https://www.python.org/downloads/) and [Pipenv](https://pypi.org/project/pipenv/)
 5. Install [Npm](https://www.npmjs.com/get-npm)
