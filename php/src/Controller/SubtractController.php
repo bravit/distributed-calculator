@@ -13,7 +13,7 @@ class SubtractController extends AbstractController
     public function subtract(Request $request, LoggerInterface $logger): Response
     {
         $operands = json_decode($request->getContent(), true);
-        $logger->info("Subtracting ${operands['operandTwo']} from ${operands['operandOne']} (PHP)");
+        $logger->info("Subtracting {$operands['operandTwo']} from {$operands['operandOne']} (PHP)");
         return new Response($operands['operandOne'] - $operands['operandTwo']);
     }
 }
