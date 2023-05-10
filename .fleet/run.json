@@ -20,21 +20,21 @@
       "environment": {
         "ASPNETCORE_URLS": "http://localhost:7001"
       },
-      "args": ["run", "--app-id", "subtractapp", "--app-port", "7001", "--dapr-http-port", "3504", "dotnet", "run"],
+      "args": ["run", "--app-id", "csharp-calc", "--app-port", "7001", "--dapr-http-port", "3505", "dotnet", "run"],
     },
       {
           "type": "command",
-          "name": "Subtracter (PHP)",
+          "name": "PHP Calculator",
           "program": "dapr",
           "workingDir": "php/",
-          "args": ["run", "--app-id", "subtractapp", "--app-port", "7001", "--dapr-http-port", "3504", "--", "php", "-S", "localhost:7001", "-t", "public"],
+          "args": ["run", "--app-id", "php-calc", "--app-port", "7002", "--dapr-http-port", "3504", "--", "php", "-S", "0.0.0.0:7002", "-t", "public"],
       },
     {
       "type": "command",
-      "name": "Adder (Go)",
+      "name": "Go Calculator",
       "program": "dapr",
       "workingDir": "go/",
-      "args": ["run", "--app-id", "addapp", "--app-port", "6000", "--dapr-http-port", "3503", "go", "run", "app.go"],
+      "args": ["run", "--app-id", "go-calc", "--app-port", "6001", "--dapr-http-port", "3503", "go", "run", "app.go"],
     },
       {
           "type": "command",
@@ -44,34 +44,34 @@
       },
       {
           "type": "command",
-          "name": "Adder (Java)",
+          "name": "Java Calculator",
           "program": "dapr",
           "workingDir": "java/",
-          "args": ["run", "--app-id", "addapp", "--app-port", "6000", "--dapr-http-port", "3503", "./gradlew", "run"],
+          "args": ["run", "--app-id", "java-calc", "--app-port", "6002", "--dapr-http-port", "3506", "./gradlew", "run"],
       },
       {
       "type": "command",
-      "name": "Divider (Node JS)",
+      "name": "NodeJS Calculator",
       "program": "dapr",
       "workingDir": "node/",
-      "args": ["run", "--app-id", "divideapp", "--app-port", "4000", "--dapr-http-port", "3502", "node", "app.js"],
+      "args": ["run", "--app-id", "node-calc", "--app-port", "4001", "--dapr-http-port", "3502", "node", "app.js"],
       },
       {
           "type": "command",
-          "name": "Divider (Kotlin)",
+          "name": "Kotlin Calculator",
           "program": "dapr",
           "workingDir": "kotlin/",
-          "args": ["run", "--app-id", "divideapp", "--app-port", "4000", "--dapr-http-port", "3502", "./gradlew", "run"],
+          "args": ["run", "--app-id", "kotlin-calc", "--app-port", "4002", "--dapr-http-port", "3509", "./gradlew", "run"],
       },
       {
       "type": "command",
-      "name": "Multiplier (Python)",
+      "name": "Python Calculator",
       "program": "dapr",
       "workingDir": "./python/",
       "environment": {
         "FLASK_RUN_PORT": "5001"
       },
-      "args": ["run", "--app-id", "multiplyapp", "--app-port", "5001", "--dapr-http-port", "3501", "pipenv", "run", "flask", "run"],
+      "args": ["run", "--app-id", "python-calc", "--app-port", "5001", "--dapr-http-port", "3501", "pipenv", "run", "flask", "run"],
     },
     {
       "type": "command",
@@ -82,10 +82,10 @@
     },
     {
       "type": "command",
-      "name": "Multiplier (Rust)",
+      "name": "Rust Calculator",
       "program": "dapr",
       "workingDir": "rust/",
-      "args": ["run", "--app-id", "multiplyapp", "--app-port", "5001", "--dapr-http-port", "3501", "cargo", "run"],
+      "args": ["run", "--app-id", "rust-calc", "--app-port", "5002", "--dapr-http-port", "3508", "cargo", "run"],
     },
       {
           "type": "command",

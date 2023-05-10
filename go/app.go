@@ -38,7 +38,7 @@ func add(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	appPort := "6000"
+	appPort := "6001"
 	if value, ok := os.LookupEnv("APP_PORT"); ok {
 		appPort = value
 	}

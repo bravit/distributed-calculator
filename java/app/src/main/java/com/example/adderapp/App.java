@@ -15,7 +15,7 @@ public class App {
     }
 
     public static void main(String[] args) {
-        port(6000);
+        port(6002);
         post("/add", new AdditionHelper());
     }
 }

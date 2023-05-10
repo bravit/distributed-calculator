@@ -20,25 +20,29 @@ export default class ButtonPanel extends React.Component {
           <Button name="AC" clickHandler={this.handleClick} />
           <Button name="+/-" clickHandler={this.handleClick} />
           <Button name="%" clickHandler={this.handleClick} />
-          <Button name="÷" clickHandler={this.handleClick} orange />
+          <Button name="÷ (NodeJS)" clickHandler={this.handleClick} orange />
+          <Button name="÷ (Kotlin)" clickHandler={this.handleClick} orange />
         </div>
         <div>
           <Button name="7" clickHandler={this.handleClick} />
           <Button name="8" clickHandler={this.handleClick} />
           <Button name="9" clickHandler={this.handleClick} />
-          <Button name="x" clickHandler={this.handleClick} orange />
+          <Button name="x (Python)" clickHandler={this.handleClick} orange />
+          <Button name="x (Rust)" clickHandler={this.handleClick} orange />
         </div>
         <div>
           <Button name="4" clickHandler={this.handleClick} />
           <Button name="5" clickHandler={this.handleClick} />
           <Button name="6" clickHandler={this.handleClick} />
-          <Button name="-" clickHandler={this.handleClick} orange />
+          <Button name="- (C#)" clickHandler={this.handleClick} orange />
+          <Button name="- (PHP)" clickHandler={this.handleClick} orange />
         </div>
         <div>
           <Button name="1" clickHandler={this.handleClick} />
           <Button name="2" clickHandler={this.handleClick} />
           <Button name="3" clickHandler={this.handleClick} />
-          <Button name="+" clickHandler={this.handleClick} orange />
+          <Button name="+ (Java)" clickHandler={this.handleClick} orange />
+          <Button name="+ (Go)" clickHandler={this.handleClick} orange />
         </div>
         <div>
           <Button name="0" clickHandler={this.handleClick} wide />

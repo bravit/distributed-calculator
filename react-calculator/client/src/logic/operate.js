@@ -1,8 +1,12 @@
 const operationMap = {
-  "+": "add",
-  "-": "subtract",
-  "x": "multiply",
-  "÷": "divide"
+  "+ (Java)": "java/add",
+  "+ (Go)": "go/add",
+  "- (C#)": "csharp/subtract",
+  "- (PHP)": "php/subtract",
+  "x (Python)": "python/multiply",
+  "x (Rust)": "rust/multiply",
+  "÷ (NodeJS)": "node/divide",
+  "÷ (Kotlin)": "kotlin/divide"
 };
 
 export default async function operate(operandOne, operandTwo, operationSymbol) {

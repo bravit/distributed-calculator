@@ -22,7 +22,7 @@ async fn main() -> std::io::Result<()> {
     HttpServer::new(|| {
         App::new().service(multiply)
     })
-    .bind(("127.0.0.1", 5001))?
+    .bind(("127.0.0.1", 5002))?
     .run()
     .await
 }

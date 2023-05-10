@@ -17,7 +17,7 @@ class App {
 }
 
 fun main() {
-    embeddedServer(Netty, port = 4000) {
+    embeddedServer(Netty, port = 4002) {
         routing {
             post("/divide") {
                 val request = Json.decodeFromString<Operands>(call.receiveText())
