@@ -10,8 +10,6 @@ attributes:
             updateChannel: 'EAP Candidate'
         warmup:
             startOn:
-            - type: schedule
-              cron: '0 0 0 ? * SUN *'
             - type: gitPush
               branchFilter:
                   include:
