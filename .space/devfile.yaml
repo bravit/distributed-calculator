@@ -7,7 +7,7 @@ attributes:
         editor:
             type: Fleet
             version: '1.18.90'
-            updateChannel: 'EAP'
+            updateChannel: 'EAP Candidate'
 components:
 - name: dev-container
   container:
