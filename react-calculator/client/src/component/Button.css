@@ -25,3 +25,42 @@
   background-color: #f5923e;
   color: white;
 }
+
+.component-button.service button {
+  background-position-y: bottom;
+  background-position-x: right;
+  background-repeat: no-repeat;
+  background-size: 25%;
+}
+
+.component-button.go button {
+  background-image: url("../services/go.svg");
+}
+
+.component-button.java button {
+  background-image: url("../services/java.svg");
+}
+
+.component-button.kotlin button {
+  background-image: url("../services/kotlin.svg");
+}
+
+.component-button.rust button {
+  background-image: url("../services/rust.svg");
+}
+
+.component-button.csharp button {
+  background-image: url("../services/csharp.svg");
+}
+
+.component-button.php button {
+  background-image: url("../services/php.svg");
+}
+
+.component-button.python button {
+  background-image: url("../services/python.svg");
+}
+
+.component-button.node button {
+  background-image: url("../services/javascript.svg");
+}

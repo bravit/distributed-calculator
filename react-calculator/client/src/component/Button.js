@@ -20,6 +20,7 @@ export default class Button extends React.Component {
       "component-button",
       this.props.orange ? "orange" : "",
       this.props.wide ? "wide" : "",
+      this.props.service ? "service " + this.props.service : ""
     ];
 
     return (
