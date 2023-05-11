@@ -8,6 +8,15 @@ attributes:
             type: Fleet
             version: '1.18.90'
             updateChannel: 'EAP Candidate'
+        warmup:
+            startOn:
+            - type: schedule
+              cron: '0 0 0 ? * SUN *'
+            - type: gitPush
+              branchFilter:
+                  include:
+                      - 'refs/heads/master'
+            script: ./dev-env-warmup.sh
 components:
 - name: dev-container
   container:
