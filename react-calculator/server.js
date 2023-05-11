@@ -21,104 +21,37 @@ const stateUrl = `http://localhost:${daprPort}/v1.0/state/${stateStoreName}`;
 The following routes forward requests (using pipe) from our React client to our dapr-enabled services. Our Dapr sidecar lives on localhost:<daprPort>. We invoke other Dapr enabled services by calling /v1.0/invoke/<DAPR_ID>/method/<SERVICE'S_ROUTE>.
 */
 
-app.post('/calculate/java/add', async (req, res) => {
-  try {
-      // Invoke Dapr add app
-      const appResponse = await axios.post(`${daprUrl}/java-calc/method/add`, req.body);
+const services = [
+  ["java", "add"],
+  ["go", "add"],
+  ["csharp", "subtract"],
+  ["php", "subtract"],
+  ["kotlin", "divide"],
+  ["node", "divide"],
+  ["python", "multiply"],
+  ["rust", "multiply"]
+]
 
-      // Return expected string result to client
-      return res.send(`${appResponse.data}`);
-  } catch (err) {
-      console.log(err);
-  }
-});
-
-app.post('/calculate/go/add', async (req, res) => {
-  try {
-    // Invoke Dapr add app
-    const appResponse = await axios.post(`${daprUrl}/go-calc/method/add`, req.body);
-
-    // Return expected string result to client
-    return res.send(`${appResponse.data}`);
-  } catch (err) {
-    console.log(err);
-  }
-});
-
-app.post('/calculate/csharp/subtract', async (req, res) => {
-  try {
-      // Invoke Dapr subtract app
-      console.log("subtract app** 1")
-      const appResponse = await axios.post(`${daprUrl}/csharp-calc/method/subtract`, req.body);
-      console.log("subtract app** 2")
-      // Return expected string result to client
-      return res.send(`${appResponse.data}`); 
-  } catch (err) {
-      console.log(err);
-  }
-});
-
-app.post('/calculate/php/subtract', async (req, res) => {
+async function runRequest(service, method, req, res) {
   try {
     // Invoke Dapr subtract app
-    console.log("subtract app** 1 (PHP)")
-    const appResponse = await axios.post(`${daprUrl}/php-calc/method/subtract`, req.body);
-    console.log("subtract app** 2 (PHP)")
+    let serviceName = service + "-calc"
+    console.log(`Requesing ${method} from ${serviceName}`)
+    const appResponse = await axios.post(`${daprUrl}/${serviceName}/method/${method}`, req.body);
     // Return expected string result to client
     return res.send(`${appResponse.data}`);
   } catch (err) {
     console.log(err);
   }
-});
+}
 
-app.post('/calculate/python/multiply', async (req, res) => {
-  try {
-      // Dapr invoke multiply app
-      const appResponse = await axios.post(`${daprUrl}/python-calc/method/multiply`, req.body);
-
-      // Return expected string result to client
-      return res.send(`${appResponse.data}`);
-  } catch (err) {
-      console.log(err);
-  }
-});
-
-app.post('/calculate/rust/multiply', async (req, res) => {
-  try {
-    // Dapr invoke multiply app
-    const appResponse = await axios.post(`${daprUrl}/rust-calc/method/multiply`, req.body);
-
-    // Return expected string result to client
-    return res.send(`${appResponse.data}`);
-  } catch (err) {
-    console.log(err);
-  }
-});
-
-
-app.post('/calculate/node/divide', async (req, res) => {
-  try {
-      // Dapr invoke divide app
-      const appResponse = await axios.post(`${daprUrl}/node-calc/method/divide`, req.body);
-
-      // Return expected string result to client
-      return res.send(`${appResponse.data}`); 
-  } catch (err) {
-      console.log(err);
-  }
-});
-
-app.post('/calculate/kotlin/divide', async (req, res) => {
-  try {
-    // Dapr invoke divide app
-    const appResponse = await axios.post(`${daprUrl}/kotlin-calc/method/divide`, req.body);
-
-    // Return expected string result to client
-    return res.send(`${appResponse.data}`);
-  } catch (err) {
-    console.log(err);
-  }
-});
+services.forEach(data => {
+  let name = data[0]
+  let method = data[1]
+  app.post(`/calculate/${name}/${method}`, async (req, res) => {
+    await runRequest(name, method, req, res)
+  });
+})
 
 // Forward state retrieval to Dapr state endpoint
 app.get('/state', async (req, res) => {
