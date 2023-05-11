@@ -1,101 +1,110 @@
 {
-  "configurations": [
-    {
-      "type": "command",
-      "name": "Build C# Calculator",
-      "program": "dotnet",
-      "workingDir": "csharp/",
-      "environment": {
-        "ASPNETCORE_URLS": "http://localhost:7001"
-      },
-      "args": [
-        "build"
-      ]
-    },
-    {
-      "type": "command",
-      "name": "C# Calculator",
-      "program": "dapr",
-      "workingDir": "csharp/",
-      "environment": {
-        "ASPNETCORE_URLS": "http://localhost:7001"
-      },
-      "args": ["run", "--app-id", "csharp-calc", "--app-port", "7001", "--dapr-http-port", "3505", "dotnet", "run"],
-    },
-      {
-          "type": "command",
-          "name": "PHP Calculator",
-          "program": "dapr",
-          "workingDir": "php/",
-          "args": ["run", "--app-id", "php-calc", "--app-port", "7002", "--dapr-http-port", "3504", "--", "php", "-S", "0.0.0.0:7002", "-t", "public"],
-      },
-    {
-      "type": "command",
-      "name": "Go Calculator",
-      "program": "dapr",
-      "workingDir": "go/",
-      "args": ["run", "--app-id", "go-calc", "--app-port", "6001", "--dapr-http-port", "3503", "go", "run", "app.go"],
-    },
-      {
-          "type": "command",
-          "name": "Print Env",
-          "program": "printenv",
-          "args": [],
-      },
-      {
-          "type": "command",
-          "name": "Java Calculator",
-          "program": "dapr",
-          "workingDir": "java/",
-          "args": ["run", "--app-id", "java-calc", "--app-port", "6002", "--dapr-http-port", "3506", "./gradlew", "run"],
-      },
-      {
-      "type": "command",
-      "name": "NodeJS Calculator",
-      "program": "dapr",
-      "workingDir": "node/",
-      "args": ["run", "--app-id", "node-calc", "--app-port", "4001", "--dapr-http-port", "3502", "node", "app.js"],
-      },
-      {
-          "type": "command",
-          "name": "Kotlin Calculator",
-          "program": "dapr",
-          "workingDir": "kotlin/",
-          "args": ["run", "--app-id", "kotlin-calc", "--app-port", "4002", "--dapr-http-port", "3509", "./gradlew", "run"],
-      },
-      {
-      "type": "command",
-      "name": "Python Calculator",
-      "program": "dapr",
-      "workingDir": "./python/",
-      "environment": {
-        "FLASK_RUN_PORT": "5001"
-      },
-      "args": ["run", "--app-id", "python-calc", "--app-port", "5001", "--dapr-http-port", "3501", "pipenv", "run", "flask", "run"],
-    },
-    {
-      "type": "command",
-      "name": "Frontend",
-      "program": "dapr",
-      "workingDir": "react-calculator/",
-      "args": ["run", "--app-id", "frontendapp", "--app-port", "8080", "--dapr-http-port", "3507", "node", "server.js"],
-    },
-    {
-      "type": "command",
-      "name": "Rust Calculator",
-      "program": "dapr",
-      "workingDir": "rust/",
-      "args": ["run", "--app-id", "rust-calc", "--app-port", "5002", "--dapr-http-port", "3508", "cargo", "run"],
-    },
-      {
-          "type": "command",
-          "name": "Validate Services",
-          "program": "./validate-services.sh",
-      },
-      {
-          "type": "command",
-          "name": "Stop Services",
-          "program": "./stop-services.sh",
-      },
-  ]
+    "configurations": [
+        {
+            "type": "command",
+            "name": "Build C# Calculator",
+            "program": "dotnet",
+            "workingDir": "csharp/",
+            "environment": {
+                "ASPNETCORE_URLS": "http://localhost:7001"
+            },
+            "args": [
+                "build"
+            ]
+        },
+        {
+            "type": "command",
+            "name": "C# Calculator",
+            "program": "./start-service.sh",
+            "environment": {
+                "ASPNETCORE_URLS": "http://localhost:7001"
+            },
+            "args": [
+                "csharp-calc"
+            ]
+        },
+        {
+            "type": "command",
+            "name": "PHP Calculator",
+            "program": "./start-service.sh",
+            "args": [
+                "php-calc"
+            ]
+        },
+        {
+            "type": "command",
+            "name": "Go Calculator",
+            "program": "./start-service.sh",
+            "args": [
+                "go-calc"
+            ]
+        },
+        {
+            "type": "command",
+            "name": "Print Env",
+            "program": "printenv",
+            "args": []
+        },
+        {
+            "type": "command",
+            "name": "Java Calculator",
+            "program": "./start-service.sh",
+            "args": [
+                "java-calc"
+            ]
+        },
+        {
+            "type": "command",
+            "name": "NodeJS Calculator",
+            "program": "./start-service.sh",
+            "args": [
+                "node-calc"
+            ]
+        },
+        {
+            "type": "command",
+            "name": "Kotlin Calculator",
+            "program": "./start-service.sh",
+            "args": [
+                "kotlin-calc"
+            ]
+        },
+        {
+            "type": "command",
+            "name": "Python Calculator",
+            "program": "./start-service.sh",
+            "environment": {
+                "FLASK_RUN_PORT": "5001"
+            },
+            "args": [
+                "python-calc"
+            ]
+        },
+        {
+            "type": "command",
+            "name": "Frontend",
+            "program": "./start-service.sh",
+            "args": [
+                "frontendapp"
+            ]
+        },
+        {
+            "type": "command",
+            "name": "Rust Calculator",
+            "program": "./start-service.sh",
+            "args": [
+                "rust-calc"
+            ]
+        },
+        {
+            "type": "command",
+            "name": "Validate Services",
+            "program": "./validate-services.sh"
+        },
+        {
+            "type": "command",
+            "name": "Stop Services",
+            "program": "./stop-services.sh"
+        }
+    ]
 }
