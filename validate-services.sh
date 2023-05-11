@@ -1,7 +1,7 @@
 #!/bin/bash
 
 check() {
-    curl -s http://localhost:$1/$2 -H Content-Type:application/json --data @operands.json | grep -Eq $3 && printf "\t✅" || printf "\t❌"
+    curl -s http://localhost:$1/$2 -H Content-Type:application/json --data @operands.json -m 1 | grep -Eq $3 && printf "\t✅" || printf "\t❌"
 }
 
 check_both() {
