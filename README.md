@@ -82,16 +82,16 @@ The following architecture diagram illustrates the components that make up this 
 
 To make sure all the backend applications are working, you can run the **Validate Services** run configuration which will test all the operations and report if something is missing. This configuration executes the `./validate-services` script. If everything works correctly you should get the following output:
 
-                                direct  via frontend
-        ADD             Go      ✅       ✅
-        ADD             Java    ✅       ✅
-        SUBTRACT        C#      ✅       ✅
-        SUBTRACT        PHP     ✅       ✅
-        MULTIPLY        Python  ✅       ✅
-        MULTIPLY        Rust    ✅       ✅
-        DIVIDE          NodeJS  ✅       ✅
-        DIVIDE          Kotlin  ✅       ✅
-
+                            direct  via frontend
+    ADD             Go      ✅       ✅
+    ADD             Java    ✅       ✅
+    SUBTRACT        C#      ✅       ✅
+    SUBTRACT        PHP     ✅       ✅
+    MULTIPLY        Python  ✅       ✅
+    MULTIPLY        Rust    ✅       ✅
+    DIVIDE          NodeJS  ✅       ✅
+    DIVIDE          Kotlin  ✅       ✅
+    
 6. **Optional:** Check persistent state (powered by redis)
 
 - To check persistent state, you can run the following `curl` request:
