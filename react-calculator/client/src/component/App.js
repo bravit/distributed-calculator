@@ -9,6 +9,7 @@ export default class App extends React.Component {
     total: null,
     next: null,
     operation: null,
+    service: null,
   };
 
   async componentDidMount() {
@@ -20,8 +21,8 @@ export default class App extends React.Component {
     }
   }
 
-  handleClick = async (buttonName) => {
-    let value = await calculate(this.state, buttonName);
+  handleClick = async (buttonName, service) => {
+    let value = await calculate(this.state, buttonName, service);
     this.setState(value);
     this.persistState(this.state);
   };

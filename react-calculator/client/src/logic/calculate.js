@@ -12,12 +12,13 @@ import isNumber from "./isNumber";
  *   next:String       the next number to be operated on with the total
  *   operation:String  +, -, etc.
  */
-export default async function calculate(obj, buttonName) {
+export default async function calculate(obj, buttonName, serviceName) {
   if (buttonName === "AC") {
     return {
       total: null,
       next: null,
       operation: null,
+      service: null
     };
   }
 
@@ -52,13 +53,14 @@ export default async function calculate(obj, buttonName) {
 
   if (buttonName === "%") {
     if (obj.operation && obj.next) {
-      let result = await operate(obj.total, obj.next, obj.operation);
+      let result = await operate(obj.total, obj.next, obj.operation, obj.service);
       return {
         total: Big(result)
           .div(Big("100"))
           .toString(),
         next: null,
         operation: null,
+        service: null
       };
     }
     if (obj.next) {
@@ -88,11 +90,12 @@ export default async function calculate(obj, buttonName) {
 
   if (buttonName === "=") {
     if (obj.next && obj.operation) {
-      const total = await operate(obj.total, obj.next, obj.operation);
+      const total = await operate(obj.total, obj.next, obj.operation, obj.service);
       return {
         total,
         next: null,
         operation: null,
+        service: null,
       };
     } else {
       // '=' with no operation, nothing to do
@@ -124,11 +127,12 @@ export default async function calculate(obj, buttonName) {
 
   // User pressed an operation button and there is an existing operation
   if (obj.operation) {
-    const total = await operate(obj.total, obj.next, obj.operation);
+    const total = await operate(obj.total, obj.next, obj.operation, obj.service);
       return {
         total,
         next: null,
         operation: buttonName,
+        service: serviceName
       };
   }
 
@@ -137,7 +141,8 @@ export default async function calculate(obj, buttonName) {
   // The user hasn't typed a number yet, just save the operation
   if (!obj.next) {
     return {
-      operation: buttonName
+      operation: buttonName,
+      service: serviceName
     };
   }
 
@@ -146,5 +151,6 @@ export default async function calculate(obj, buttonName) {
     total: obj.next,
     next: null,
     operation: buttonName,
+    service: serviceName
   };
 }

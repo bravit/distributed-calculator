@@ -5,13 +5,14 @@ import "./Button.css";
 export default class Button extends React.Component {
   static propTypes = {
     name: PropTypes.string,
+    service: PropTypes.string,
     orange: PropTypes.bool,
     wide: PropTypes.bool,
     clickHandler: PropTypes.func,
   };
 
   handleClick = () => {
-    this.props.clickHandler(this.props.name);
+    this.props.clickHandler(this.props.name, this.props.service);
   };
 
   render() {
