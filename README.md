@@ -2,7 +2,10 @@
 
 This demo project is an adaptaion of the [distributed-calculator tutorial](https://github.com/dapr/quickstarts/blob/master/tutorials/distributed-calculator) from the [beatiful collection of Dapr quickstarts and tutorials](https://github.com/dapr/quickstarts). It showcases Fleet as a polyglot IDE and such its features as smart mode, run configurations, debugging, integration with Git and Docker, remote development and remote collaboration.
 
-The original distributed-calculator project shows method invocation and state persistent capabilities of [Dapr engine](https://docs.dapr.io/) through a distributed calculator where each operation is powered by a different service written in a different language/framework. In this adaptation we provide twice more services:
+
+![Calculator Screenshot](./img/calculator-screenshot.png)
+
+The original distributed-calculator project shows method invocation and state persistent capabilities of [Dapr engine](https://docs.dapr.io/) through a distributed calculator where each operation is powered by a different service written in a different language/framework. In this adaptation, we provide twice more service implementations:
 
 - **Addition** (`/add`):
     - Go [mux](https://github.com/gorilla/mux) application
@@ -30,7 +33,7 @@ The result is a single number.
 The front-end application consists of a server and a client written in [React](https://reactjs.org/).
 Kudos to [ahfarmer](https://github.com/ahfarmer) for [React calculator](https://github.com/ahfarmer/calculator).
 
-The following architecture diagram illustrates the components that make up this project:
+The following architecture diagram illustrates the components that make up the original project:
 
 ![Architecture Diagram](./img/Architecture_Diagram.png)
 
@@ -69,12 +72,14 @@ The following architecture diagram illustrates the components that make up this 
 2. There are many Run Configurations (**Run/Run & Debug...**) to run frontend and backend applications along the dapr sidecar instances. One can also use the `./start-service.sh` script:
 
     ```bash
+    ./start-service.sh frontendapp
+    ```
+
+    ```bash
     ./start-service.sh kotlin-calc
     ```
 
 3. Open a browser window and go to http://localhost:8080/. From here, you can enter the different operations. If you run the project from the Space Dev environment, you will also need to **Forward Port** 8080 to some local port (via **Go to/Actions...** menu).
-
-    ![Calculator Screenshot](./img/calculator-screenshot.png)
 
 4. Open your browser's console window (using F12 key) to see the logs produced as you use the calculator. Note that each time you click a button, you see logs that indicate state persistence and the different apps that are contacted to perform the operation.
 
