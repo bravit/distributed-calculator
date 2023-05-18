@@ -30,7 +30,8 @@ const services = [
   ["kotlin", "divide"],
   ["node", "divide"],
   ["python", "multiply"],
-  ["rust", "multiply"]
+  ["rust", "multiply"],
+  ["rust", "divide"],
 ]
 
 async function runRequest(service, method, req, res) {

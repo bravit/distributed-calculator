@@ -22,6 +22,7 @@ export default class ButtonPanel extends React.Component {
           <Button name="%" clickHandler={this.handleClick} />
           <Button name="÷" service="node" clickHandler={this.handleClick} orange />
           <Button name="÷" service="kotlin" clickHandler={this.handleClick} orange />
+          <Button name="÷" service="rust" clickHandler={this.handleClick} orange />
         </div>
         <div>
           <Button name="7" clickHandler={this.handleClick} />
@@ -43,6 +44,7 @@ export default class ButtonPanel extends React.Component {
           <Button name="3" clickHandler={this.handleClick} />
           <Button name="+" service="java" clickHandler={this.handleClick} orange />
           <Button name="+" service="go" clickHandler={this.handleClick} orange />
+          <Button name="+" service="cpp" clickHandler={this.handleClick} orange />
         </div>
         <div>
           <Button name="0" clickHandler={this.handleClick} wide />
