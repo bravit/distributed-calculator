@@ -7,4 +7,5 @@ dapr stop kotlin-calc
 dapr stop java-calc
 dapr stop go-calc
 dapr stop node-calc
+dapr stop cpp-calc
 dapr stop frontendapp

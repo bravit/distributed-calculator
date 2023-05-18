@@ -23,6 +23,8 @@ case $1 in
         cd node && dapr run --app-id node-calc --app-port 4001 --dapr-http-port 3502 node app.js ;;
     csharp-calc )
         cd csharp && dapr run --app-id csharp-calc --app-port 7001 --dapr-http-port 3505 dotnet run ;;
+    cpp-calc )
+        cd cpp && dapr run --app-id cpp-calc --app-port 6003 --dapr-http-port 3510 bin/cpp-calc ;;
     frontendapp )
         cd react-calculator && dapr run --app-id frontendapp --app-port 8080 --dapr-http-port 3507 node server.js ;;
     *)

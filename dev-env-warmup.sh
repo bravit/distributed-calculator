@@ -11,3 +11,5 @@ cd ../kotlin
 ./gradlew build
 cd ../rust
 cargo build
+cd ../cpp
+cmake --build .

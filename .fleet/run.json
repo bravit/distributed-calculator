@@ -40,6 +40,14 @@
         },
         {
             "type": "command",
+            "name": "C++ Calculator",
+            "program": "./start-service.sh",
+            "args": [
+                "cpp-calc"
+            ]
+        },
+        {
+            "type": "command",
             "name": "Go Calculator",
             "program": "./start-service.sh",
             "args": [

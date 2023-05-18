@@ -11,6 +11,7 @@ check_both() {
 printf "\t\t\tdirect\tvia frontend"
 printf "\nADD\t\tGo" && check_both go 6001 add "^86$"
 printf "\nADD\t\tJava" && check_both java 6002 add "^86"
+printf "\nADD\t\tC++" && check_both cpp 6003 add "^86"
 printf "\nSUBTRACT\tC#" && check_both csharp 7001 subtract "^18$"
 printf "\nSUBTRACT\tPHP" && check_both php 7002 subtract "^18$"
 printf "\nMULTIPLY\tPython" && check_both python 5001 multiply "^1768"

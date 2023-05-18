@@ -24,6 +24,7 @@ The following routes forward requests (using pipe) from our React client to our 
 const services = [
   ["java", "add"],
   ["go", "add"],
+  ["cpp", "add"],
   ["csharp", "subtract"],
   ["php", "subtract"],
   ["kotlin", "divide"],
