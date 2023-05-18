@@ -17,10 +17,18 @@ async fn multiply(operands: web::Json<Operands>) -> impl Responder {
     serde_json::to_string(&(operands.operand_one * operands.operand_two))
 }
 
+#[post("/divide")]
+async fn divide(operands: web::Json<Operands>) -> impl Responder {
+    println!("Calculating {} / {} with Rust", operands.operand_one, operands.operand_two);
+    serde_json::to_string(&(operands.operand_one / operands.operand_two))
+}
+
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     HttpServer::new(|| {
-        App::new().service(multiply)
+        App::new()
+            .service(multiply)
+            .service(divide)
     })
     .bind(("127.0.0.1", 5002))?
     .run()
