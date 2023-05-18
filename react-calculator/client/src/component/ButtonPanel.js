@@ -28,15 +28,15 @@ export default class ButtonPanel extends React.Component {
           <Button name="7" clickHandler={this.handleClick} />
           <Button name="8" clickHandler={this.handleClick} />
           <Button name="9" clickHandler={this.handleClick} />
-          <Button name="x" service="python" clickHandler={this.handleClick} orange />
-          <Button name="x" service="rust" clickHandler={this.handleClick} orange />
+          <Button name="×" service="python" clickHandler={this.handleClick} orange />
+          <Button name="×" service="rust" clickHandler={this.handleClick} orange />
         </div>
         <div>
           <Button name="4" clickHandler={this.handleClick} />
           <Button name="5" clickHandler={this.handleClick} />
           <Button name="6" clickHandler={this.handleClick} />
-          <Button name="-" service="csharp" clickHandler={this.handleClick} orange />
-          <Button name="-" service="php" clickHandler={this.handleClick} orange />
+          <Button name="−" service="csharp" clickHandler={this.handleClick} orange />
+          <Button name="−" service="php" clickHandler={this.handleClick} orange />
         </div>
         <div>
           <Button name="1" clickHandler={this.handleClick} />

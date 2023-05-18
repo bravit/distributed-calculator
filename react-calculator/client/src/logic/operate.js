@@ -1,7 +1,7 @@
 const operationMap = {
   "+": "add",
-  "-": "subtract",
-  "x": "multiply",
+  "−": "subtract",
+  "×": "multiply",
   "÷": "divide"
 };
 
