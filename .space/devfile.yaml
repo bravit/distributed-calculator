@@ -1,12 +1,12 @@
 schemaVersion: 2.2.0
 metadata:
-    name: 'Polyglot Fleet Demo Project (distributed-calculator) config'
+    name: 'Polyglot Fleet Demo Project (distributed-calculator)'
 attributes:
     space:
         instanceType: large
         editor:
             type: Fleet
-            version: '1.18.90'
+            version: 'Latest'
             updateChannel: 'EAP Candidate'
         warmup:
             startOn:
@@ -18,4 +18,7 @@ attributes:
 components:
 - name: dev-container
   container:
+      env:
+      - name: PS1
+        value: '\w # '
       image: registry.jetbrains.team/p/vitaly-bragilevsky/containers/dev-container:latest
