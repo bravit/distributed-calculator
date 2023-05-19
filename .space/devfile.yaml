@@ -6,7 +6,7 @@ attributes:
         instanceType: large
         editor:
             type: Fleet
-            version: 'Latest'
+            version: '1.19.66'
             updateChannel: 'EAP Candidate'
         warmup:
             startOn:
@@ -18,7 +18,4 @@ attributes:
 components:
 - name: dev-container
   container:
-      env:
-      - name: PS1
-        value: '\w # '
       image: registry.jetbrains.team/p/vitaly-bragilevsky/containers/dev-container:latest
