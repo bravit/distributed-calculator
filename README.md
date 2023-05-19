@@ -1,26 +1,22 @@
 # Distributed calculator
 
-This demo project is an adaptaion of the [distributed-calculator tutorial](https://github.com/dapr/quickstarts/blob/master/tutorials/distributed-calculator) from the [beatiful collection of Dapr quickstarts and tutorials](https://github.com/dapr/quickstarts). It showcases Fleet as a polyglot IDE and such its features as smart mode, run configurations, debugging, integration with Git and Docker, remote development and remote collaboration.
-
+This demo project is an adaptaion of the [distributed-calculator tutorial](https://github.com/dapr/quickstarts/blob/master/tutorials/distributed-calculator) from the [beatiful collection of Dapr quickstarts and tutorials](https://github.com/dapr/quickstarts). It showcases Fleet as a polyglot IDE and demonstrates features like smart mode, run configurations, debugging, integration with Git and Docker, remote development, and remote collaboration.
 
 ![Calculator Screenshot](./img/calculator-screenshot.png)
 
-The original distributed-calculator project shows method invocation and state persistent capabilities of [Dapr engine](https://docs.dapr.io/) through a distributed calculator where each operation is powered by a different service written in a different language/framework. In this adaptation, we provide twice more service implementations:
+The original distributed-calculator project shows method invocation and state persistent capabilities of [Dapr engine](https://docs.dapr.io/) through a distributed calculator where each operation is powered by a different service written in a different language/framework. In this adaptation, we provide much more service implementations:
 
-- **Addition** (`/add`):
-    - Go [mux](https://github.com/gorilla/mux) application
-    - Java [Spark](https://sparkjava.com/) application
-- **Multiplication** (`/multiply`):
-    - Python [flask](https://flask.palletsprojects.com/en/2.2.x/) application
-    - Rust [actix_web](https://actix.rs/) application
-- **Division** (`/divide`):
-    - Node [Express](https://expressjs.com/) application
-    - Kotlin [Ktor](https://ktor.io/) application
-- **Subtraction** (`/subtract`):
-    - [ASP.NET 7.0](https://docs.microsoft.com/en-us/dotnet/core/) application
-    - PHP [Symfony](https://symfony.com/) application
+- C++ [Crow](https://crowcpp.org/) application implements addition and subtraction
+- Rust [actix_web](https://actix.rs/) application implements multiplication and division
+- Go [mux](https://github.com/gorilla/mux) application implements addition
+- Java [Spark](https://sparkjava.com/) application implements addition and multiplication
+- Kotlin [Ktor](https://ktor.io/) application implements division
+- C# [ASP.NET 7.0](https://docs.microsoft.com/en-us/dotnet/core/) application implements subtraction
+- Python [flask](https://flask.palletsprojects.com/en/2.2.x/) application implements multiplication
+- PHP [Symfony](https://symfony.com/) application implements subtraction
+- Node [Express](https://expressjs.com/) application implements division
 
-Every backend application listens its own port and answers one kind of POST requests with the JSON-encoded body like the following:
+Every backend application listens its own port and answers one or several POST requests (`/add`, `/multiply`, `/subtract`, `/divide`) with the JSON-encoded body like the following:
     ```json
     {
         "operandOne":"52",
@@ -49,21 +45,9 @@ The following architecture diagram illustrates the components that make up the o
 6. Install [Node](https://nodejs.org/en/download/)
 7. Install [Rust](https://rustup.rs/)
 8. Install [PHP](https://www.php.net/manual/en/install.php) and [composer](https://getcomposer.org/download/)
-9. Install [Docker](https://www.docker.com/)
-10. The content of the `./deps.sh` script can give you an idea of how to install project dependencies:
-
-    ```bash
-    #!/bin/sh
-    cd python
-    pipenv install
-    cd ../node
-    npm install
-    cd ../php
-    composer update
-    cd ../react-calculator
-    npm install
-    npm run buildclient
-    ```
+9. Install [cmake](https://cmake.org/) and [conan](https://conan.io/)
+10. Install [Docker](https://www.docker.com/)
+11. Run [`./deps.sh`](deps.sh) to install additional project dependencies.
 
 ## Running the project
 
@@ -86,16 +70,21 @@ The following architecture diagram illustrates the components that make up the o
 5. **Optional:** Validate Services
 
 To make sure all the backend applications are working, you can run the **Validate Services** run configuration which will test all the operations and report if something is missing. This configuration executes the `./validate-services` script. If everything works correctly you should get the following output:
-
-                            direct  via frontend
-    ADD             Go      ✅       ✅
-    ADD             Java    ✅       ✅
-    SUBTRACT        C#      ✅       ✅
-    SUBTRACT        PHP     ✅       ✅
-    MULTIPLY        Python  ✅       ✅
-    MULTIPLY        Rust    ✅       ✅
-    DIVIDE          NodeJS  ✅       ✅
-    DIVIDE          Kotlin  ✅       ✅
+```
+direct  via frontend
+ADD             Go      ✅       ✅
+ADD             Java    ✅       ✅
+ADD             C++     ✅       ✅
+SUBTRACT        C#      ✅       ✅
+SUBTRACT        PHP     ✅       ✅
+SUBTRACT        C++     ✅       ✅
+MULTIPLY        Python  ✅       ✅
+MULTIPLY        Rust    ✅       ✅
+MULTIPLY        Java    ✅       ✅
+DIVIDE          NodeJS  ✅       ✅
+DIVIDE          Kotlin  ✅       ✅
+DIVIDE          Rust    ✅       ✅
+```
     
 6. **Optional:** Check persistent state (powered by redis)
 
