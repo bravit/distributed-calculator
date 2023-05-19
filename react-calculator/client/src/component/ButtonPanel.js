@@ -38,6 +38,7 @@ export default class ButtonPanel extends React.Component {
           <Button name="6" clickHandler={this.handleClick} />
           <Button name="−" service="csharp" clickHandler={this.handleClick} orange />
           <Button name="−" service="php" clickHandler={this.handleClick} orange />
+          <Button name="−" service="cpp" clickHandler={this.handleClick} orange />
         </div>
         <div>
           <Button name="1" clickHandler={this.handleClick} />

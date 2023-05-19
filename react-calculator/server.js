@@ -27,6 +27,7 @@ const services = [
   ["cpp", "add"],
   ["csharp", "subtract"],
   ["php", "subtract"],
+  ["cpp", "subtract"],
   ["kotlin", "divide"],
   ["node", "divide"],
   ["python", "multiply"],

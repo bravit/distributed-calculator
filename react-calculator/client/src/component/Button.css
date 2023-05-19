@@ -5,7 +5,11 @@
 }
 
 .component-button.wide {
-  width: 40%;
+  width: 33.33%;
+}
+
+.component-button.wide.orange {
+  width: 49.98%;
 }
 
 .component-button button {
