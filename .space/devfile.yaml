@@ -6,7 +6,6 @@ attributes:
         instanceType: large
         editor:
             type: Fleet
-            version: '1.19.66'
             updateChannel: 'EAP Candidate'
         warmup:
             startOn:
