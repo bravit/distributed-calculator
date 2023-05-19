@@ -1,4 +1,4 @@
-package com.example.adderapp;
+package com.example.calc;
 
 import spark.Request;
 import spark.Response;

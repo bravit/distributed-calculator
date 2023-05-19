@@ -31,6 +31,7 @@ const services = [
   ["node", "divide"],
   ["python", "multiply"],
   ["rust", "multiply"],
+  ["java", "multiply"],
   ["rust", "divide"],
 ]
 

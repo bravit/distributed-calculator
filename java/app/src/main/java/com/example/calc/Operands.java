@@ -1,4 +1,4 @@
-package com.example.adderapp;
+package com.example.calc;
 
 public class Operands {
   public float operandOne;

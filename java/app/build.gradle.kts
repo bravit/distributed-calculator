@@ -29,5 +29,5 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass.set("com.example.adderapp.App")
+    mainClass.set("com.example.calc.App")
 }
