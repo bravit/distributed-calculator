@@ -1,6 +1,6 @@
 # Distributed calculator
 
-This demo project is an adaptaion of the [distributed-calculator tutorial](https://github.com/dapr/quickstarts/blob/master/tutorials/distributed-calculator) from the [beatiful collection of Dapr quickstarts and tutorials](https://github.com/dapr/quickstarts). It showcases Fleet as a polyglot IDE and demonstrates features like smart mode, run configurations, debugging, integration with Git and Docker, remote development, and remote collaboration.
+This demo project is an adaptaion of the [distributed-calculator tutorial](https://github.com/dapr/quickstarts/blob/master/tutorials/distributed-calculator) from the [beautiful collection of Dapr quickstarts and tutorials](https://github.com/dapr/quickstarts). It showcases Fleet as a polyglot IDE and demonstrates features like smart mode, run configurations, debugging, integration with Git and Docker, remote development, and remote collaboration.
 
 ![Calculator Screenshot](./img/calculator-screenshot.png)
 
