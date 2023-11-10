@@ -69,22 +69,9 @@ The following architecture diagram illustrates the components that make up the o
 
 5. **Optional:** Validate Services
 
-To make sure all the backend applications are working, you can run the **Validate Services** run configuration which will test all the operations and report if something is missing. This configuration executes the `./validate-services` script. If everything works correctly you should get the following output:
-```
-direct  via frontend
-ADD             Go      ✅       ✅
-ADD             Java    ✅       ✅
-ADD             C++     ✅       ✅
-SUBTRACT        C#      ✅       ✅
-SUBTRACT        PHP     ✅       ✅
-SUBTRACT        C++     ✅       ✅
-MULTIPLY        Python  ✅       ✅
-MULTIPLY        Rust    ✅       ✅
-MULTIPLY        Java    ✅       ✅
-DIVIDE          NodeJS  ✅       ✅
-DIVIDE          Kotlin  ✅       ✅
-DIVIDE          Rust    ✅       ✅
-```
+To make sure all the backend applications are working, you can run the **Validate Services** run configuration which will test all the operations and report if something is missing. This configuration executes the `./validate-services.sh` script. If everything works correctly you should get the following output:
+
+![Validated Services](./img/valdate-services.png)
     
 6. **Optional:** Check persistent state (powered by redis)
 
