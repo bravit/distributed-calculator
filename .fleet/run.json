@@ -29,7 +29,7 @@
         {
             "type": "command",
             "name": "C# Calculator",
-            "program": "./start-service.sh",
+            "program": "$PROJECT_DIR$/start-service.sh",
             "environment": {
                 "ASPNETCORE_URLS": "http://localhost:7001"
             },
@@ -40,7 +40,7 @@
         {
             "type": "command",
             "name": "PHP Calculator",
-            "program": "./start-service.sh",
+            "program": "$PROJECT_DIR$/start-service.sh",
             "args": [
                 "php-calc"
             ]
@@ -48,7 +48,7 @@
         {
             "type": "command",
             "name": "C++ Calculator",
-            "program": "./start-service.sh",
+            "program": "$PROJECT_DIR$/start-service.sh",
             "args": [
                 "cpp-calc"
             ]
@@ -56,7 +56,7 @@
         {
             "type": "command",
             "name": "Go Calculator",
-            "program": "./start-service.sh",
+            "program": "$PROJECT_DIR$/start-service.sh",
             "args": [
                 "go-calc"
             ]
@@ -70,7 +70,7 @@
         {
             "type": "command",
             "name": "Java Calculator",
-            "program": "./start-service.sh",
+            "program": "$PROJECT_DIR$/start-service.sh",
             "args": [
                 "java-calc"
             ]
@@ -78,7 +78,7 @@
         {
             "type": "command",
             "name": "NodeJS Calculator",
-            "program": "./start-service.sh",
+            "program": "$PROJECT_DIR$/start-service.sh",
             "args": [
                 "node-calc"
             ]
@@ -86,7 +86,7 @@
         {
             "type": "command",
             "name": "Kotlin Calculator",
-            "program": "./start-service.sh",
+            "program": "$PROJECT_DIR$/start-service.sh",
             "args": [
                 "kotlin-calc"
             ]
@@ -94,7 +94,7 @@
         {
             "type": "command",
             "name": "Python Calculator",
-            "program": "./start-service.sh",
+            "program": "$PROJECT_DIR$/start-service.sh",
             "environment": {
                 "FLASK_RUN_PORT": "5001"
             },
@@ -105,7 +105,7 @@
         {
             "type": "command",
             "name": "Frontend",
-            "program": "./start-service.sh",
+            "program": "$PROJECT_DIR$/start-service.sh",
             "args": [
                 "frontendapp"
             ]
@@ -113,7 +113,7 @@
         {
             "type": "command",
             "name": "Rust Calculator",
-            "program": "./start-service.sh",
+            "program": "$PROJECT_DIR$/start-service.sh",
             "args": [
                 "rust-calc"
             ]
@@ -121,12 +121,12 @@
         {
             "type": "command",
             "name": "Validate Services",
-            "program": "./validate-services.sh"
+            "program": "$PROJECT_DIR$/validate-services.sh"
         },
         {
             "type": "command",
             "name": "Stop Services",
-            "program": "./stop-services.sh"
+            "program": "$PROJECT_DIR$/stop-services.sh"
         }
     ]
 }
