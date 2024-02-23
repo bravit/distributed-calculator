@@ -14,3 +14,6 @@ add_executable(${PROJECT_NAME} src/calc.cpp)
 
 # Use the global target
 target_link_libraries(${PROJECT_NAME} asio::asio Threads::Threads)
+add_custom_target(run
+    COMMAND bin/cpp-calc
+)
