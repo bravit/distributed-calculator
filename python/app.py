@@ -11,19 +11,14 @@
 # limitations under the License.
 #
 
+import math
+import os
+
 import flask
 from flask import request, jsonify
 from flask_cors import CORS
-import math
-import sys
-import os
 
 appPort = os.getenv("APP_PORT", "5001")
-
-
-@staticmethod
-def foo():
-    pass
 
 
 app = flask.Flask(__name__)
